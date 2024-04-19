@@ -82,6 +82,15 @@
 #include <conio.h>
 #endif /* BUILD_RC2014 */
 
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/screen.h"
+#include "atari16bit/io.h"
+#include "atari16bit/globals.h"
+#include "atari16bit/input.h"
+#include "atari16bit/bar.h"
+#include <stdio.h>
+#endif /* BUILD_ATARI16BIT */
+
 #include "perform_copy.h"
 
 extern char source_filename[128];

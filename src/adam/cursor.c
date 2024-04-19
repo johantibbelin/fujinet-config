@@ -2,7 +2,7 @@
 /**
  * Cursor routines
  */
-
+#ifdef BUILD_ADAM
 #include <video/tms99x8.h>
 #include "cursor.h"
 

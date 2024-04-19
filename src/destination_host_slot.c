@@ -84,6 +84,13 @@
 #include "rc2014/bar.h"
 #endif /* BUILD_RC2014 */
 
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/screen.h"
+#include "atari16bit/input.h"
+#include "atari16bit/globals.h"
+#include "atari16bit/io.h"
+#include "atari16bit/bar.h"
+#endif /* BUILD_ATARI16BIT */
 #include "destination_host_slot.h"
 
 DHSubState dh_subState;

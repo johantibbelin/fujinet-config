@@ -91,6 +91,15 @@
 #define DIR_MAX_LEN 31
 #endif /* BUILD_RC2014 */
 
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/screen.h"
+#include "atari16bit/input.h"
+#include "atari16bit/globals.h"
+#include "atari16bit/io.h"
+#include "atari16bit/bar.h"
+#define DIR_MAX_LEN 31
+#endif /* BUILD_ATARI16BIT */
+
 extern DeviceSlot deviceSlots[8];
 extern bool quick_boot;
 

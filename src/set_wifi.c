@@ -13,7 +13,11 @@
 #include "coco/globals.h"
 #else
 #include <string.h>
+#ifdef BUILD_ATARI16BIT /* eg ATARI8BIT */
+#include <stdio.h>
+#else
 #include <conio.h>
+#endif /* BUILD_ATARI16BIT */
 #endif /* _CMOC_VERSION_ */
 
 #include "set_wifi.h"
@@ -83,6 +87,14 @@
 #include "rc2014/input.h"
 #include "rc2014/globals.h"
 #endif /* BUILD_RC2014 */
+
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/io.h"
+#include "atari16bit/screen.h"
+#include "atari16bit/bar.h"
+#include "atari16bit/input.h"
+#include "atari16bit/globals.h"
+#endif /* BUILD_ATARI16BIT */
 
 WSSubState ws_subState;
 

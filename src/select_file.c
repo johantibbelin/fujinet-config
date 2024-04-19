@@ -16,7 +16,11 @@
 #define DIR_MAX_LEN 31
 #define ENTRIES_PER_PAGE 10
 #else
+#ifdef BUILD_ATARI16BIT
+#include <stdio.h>
+#else
 #include <conio.h>
+#endif /* BUILD_ATARI16BIT */
 #include <string.h>
 #endif /* CMOC_VERSION */
 
@@ -99,6 +103,16 @@
 #define DIR_MAX_LEN 31
 #define ENTRIES_PER_PAGE 15
 #endif /* BUILD_RC2014 */
+
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/screen.h"
+#include "atari16bit/io.h"
+#include "atari16bit/globals.h"
+#include "atari16bit/input.h"
+#include "atari16bit/bar.h"
+#define DIR_MAX_LEN 31
+#define ENTRIES_PER_PAGE 15
+#endif /* BUILD_ATARI16BIT */
 
 SFSubState sf_subState;
 char path[224];
