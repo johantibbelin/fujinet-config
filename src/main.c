@@ -63,6 +63,11 @@
 #include "rc2014/screen.h"
 #endif /* BUILD_RC2014 */
 
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/io.h"
+#include "atari16bit/screen.h"
+#endif /* BUILD_ATARI16BIT */
+
 State state=HOSTS_AND_DEVICES;
 bool backToFiles=false;
 bool backFromCopy=false;

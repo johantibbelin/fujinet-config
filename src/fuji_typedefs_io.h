@@ -1,10 +1,10 @@
 #ifndef FUJI_TYPEDEFS_IO_H
 #define FUJI_TYPEDEFS_IO_H
 
-// These entries also exist in fujinet-lib, but for systems that are not
+/* These entries also exist in fujinet-lib, but for systems that are not
 // using fujinet-lib yet, we define them here. This decouples systems
 // that don't use fujinet-lib yet from including fujinet-io.h from it.
-
+*/
 #define FILE_MAXLEN 36
 #define SSID_MAXLEN 33 /* 32 + NULL */
 

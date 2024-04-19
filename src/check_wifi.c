@@ -44,6 +44,11 @@
 #include "rc2014/globals.h"
 #endif /* BUILD_RC2014 */
 
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/io.h"
+#include "atari16bit/globals.h"
+#endif /* BUILD_ATARI16BIT */
+
 #ifdef _CMOC_VERSION_
 #include "coco/stdbool.h"
 #include "coco/io.h"

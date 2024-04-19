@@ -94,6 +94,15 @@ extern uint8_t sp_error;
 #include "rc2014/bar.h"
 #endif /* BUILD_RC2014 */
 
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/globals.h"
+#include "atari16bit/io.h"
+#include "atari16bit/screen.h"
+#include "atari16bit/input.h"
+#include "atari16bit/bar.h"
+#endif /* BUILD_ATARI16BIT*/
+
+
 HDSubState hd_subState=HD_HOSTS;
 DeviceSlot deviceSlots[8];
 DeviceSlot temp_deviceSlot;

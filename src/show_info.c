@@ -73,8 +73,16 @@
 #include "rc2014/input.h"
 #include "rc2014/globals.h"
 #include "rc2014/io.h"
-#define PRINTER 2 // ?
+#define PRINTER 2 /* ? */
 #endif /* BUILD_RC2014 */
+
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/screen.h"
+#include "atari16bit/input.h"
+#include "atari16bit/globals.h"
+#include "atari16bit/io.h"
+#define PRINTER 2 /* ? */
+#endif /* BUILD_ATARI16BIT */
 
 SISubState si_subState;
 
