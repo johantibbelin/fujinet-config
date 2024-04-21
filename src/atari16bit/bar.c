@@ -27,7 +27,7 @@ static unsigned char bar_y=3, bar_c=1, bar_m=1, bar_i=0, bar_oldi=0, bar_co=0x13
 
 void bar_clear(bool oldRow)
 {
-  printf("%c[%d;%dH ", 27, bar_y + (oldRow ? bar_oldi : bar_i) + 1, 1);
+  printf("%cY%c%c", 27, (bar_y + (oldRow ? bar_oldi : bar_i) + 1)+32, 1+32);
 }
 
 /**
@@ -37,7 +37,7 @@ void bar_update(void)
 {
   bar_clear(true);
   
-  printf("%c[%d;%dH>", 27, (bar_y + bar_i + 1), 1);
+  printf("%cY%c%c", 27, (bar_y + bar_i + 1)+32, 1+32);
 }
 
 /**
