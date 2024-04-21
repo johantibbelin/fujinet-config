@@ -64,7 +64,7 @@ void screen_clrscr(void)
 
 void screen_gotoxy(char x, char y)
 {
-  printf("%cY,%d,%d", 27, y+1, x+1);
+  printf("\033Y%c%c", y+32, x+32);
 }
 
 void screen_set_cursor(bool enable)

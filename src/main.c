@@ -149,7 +149,7 @@ void run(void)
 int main(void)
 {
 	setup();
-	printf("Setup done.");
+	printf("Setup done.\n\r");
 	#ifdef TEST_SCREEN
 		test_screen_functions();
 		while (1) {}
