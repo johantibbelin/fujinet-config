@@ -1,6 +1,6 @@
 #ifdef BUILD_ATARI16BIT
 /**
- * #FujiNet CONFIG FOR #adam
+ * #FujiNet CONFIG FOR #atari16bit
  *
  * Screen Routines
  */
@@ -8,7 +8,7 @@
 #include "screen.h"
 #include "globals.h"
 #include "bar.h"
-//#include <conio.h>
+ 
 #include <stdio.h>
 #include <sys/ioctl.h>
 #include <string.h>
@@ -35,9 +35,9 @@ void screen_inverse_line(unsigned char y)
 
 void screen_put_inverse(const char c)
 {
-  printf("%c[7m", 27);
-  printf(c);
-  printf("%c[0m", 27);
+  printf("%cp", 27);
+  printf("%c",c);
+  printf("%cq", 27);
 }
 
 void screen_print_inverse(const char *s)
@@ -52,21 +52,25 @@ void screen_print_inverse(const char *s)
 void screen_print_menu(const char *si, const char *sc)
 {
   screen_print_inverse(si);
-  printf(sc);
+  printf("%c",sc);
 }
 
 void screen_clrscr(void)
 {
-  printf("%c[2J", 27);
+  printf("%cE", 27);
 }
 
 void screen_gotoxy(char x, char y)
 {
-  printf("%c[%d;%dH", 27, y+1, x+1);
+  printf("%cY,%d,%d", 27, y+1, x+1);
 }
 
 void screen_set_cursor(bool enable)
 {
+  if (enable)
+    printf("%ce",27); /* Show Cursor*/
+  else
+    printf("%cf",27); /* Hide Cursor */ 
 }
 
 void screen_clearxy(char x, char y, int len)
@@ -74,17 +78,17 @@ void screen_clearxy(char x, char y, int len)
   int i;
   screen_gotoxy(x,y);
   for (i = 0; i < len; i++)
-    printf(' ');
+    printf("%c",32);
 }
 
 void screen_clear_status(void)
 {
   screen_gotoxy(0,STATUS_BAR);
-  printf("%c[2K", 27);
+  printf("%cl", 27);
   screen_gotoxy(0,STATUS_BAR+1);
-  printf("%c[2K", 27);
+  printf("%cl", 27);
   screen_gotoxy(0,STATUS_BAR+2);
-  printf("%c[2K", 27);
+  printf("%cl", 27);
 }
 
 void chlinexy(char x, char y, int len)
@@ -92,7 +96,7 @@ void chlinexy(char x, char y, int len)
   int i;
   screen_gotoxy(x,y);
   for (i = 0; i < len; i++)
-    printf('-');
+    printf("%c",'-');
 }
 
 void screen_debug(char *message)
@@ -110,6 +114,7 @@ void screen_error(const char *c)
 void screen_init(void)
 {
   screen_clrscr();
+  screen_set_cursor(false);
 }
 
 void screen_set_wifi(AdapterConfig *ac)
@@ -503,5 +508,5 @@ void screen_hosts_and_devices_host_slot_empty(unsigned char hs)
   screen_gotoxy(4,2+hs); printf("EMPTY");
 }
 
-#endif /* BUILD_RC2014 */
+#endif /* BUILD_ATARI16BIT */
 
