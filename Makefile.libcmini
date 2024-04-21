@@ -14,7 +14,7 @@ SRCS := $(shell find $(SRC_DIRS) -name *.cpp -or -name *.c)
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 DEPS := $(OBJS:.o=.d) 
 
-CFLAGS=-DBUILD_ATARI16BIT -DTEST_SCREEN
+CFLAGS=-DBUILD_ATARI16BIT 
 LDFLAGS=
 ASFLAGS=
 

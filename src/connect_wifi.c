@@ -68,6 +68,12 @@
 #include "rc2014/globals.h"
 #endif /* BUILD_RC2014 */
 
+#ifdef BUILD_ATARI16BIT
+#include "atari16bit/io.h"
+#include "atari16bit/screen.h"
+#include "atari16bit/globals.h"
+#endif /* BUILD_ATARI16BIT */
+
 void connect_wifi(void)
 {
 	unsigned char retries = 20;

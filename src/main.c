@@ -66,6 +66,7 @@
 #ifdef BUILD_ATARI16BIT
 #include "atari16bit/io.h"
 #include "atari16bit/screen.h"
+#include <osbind.h>
 #ifdef TEST_SCREEN
 #include "atari16bit/tests/test_screen.h"
 #endif /* TEST_SCREEN */
@@ -148,6 +149,7 @@ void run(void)
 
 int main(void)
 {
+	
 	setup();
 	printf("Setup done.\n\r");
 	#ifdef TEST_SCREEN
