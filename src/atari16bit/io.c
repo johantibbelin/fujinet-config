@@ -80,6 +80,7 @@ HostSlot mock_hosts[8] = {
 void io_init(void)
 {
   //fujinet_init();
+  printf("Debug: IO init!\n");
 }
 
 unsigned char io_status(void)
