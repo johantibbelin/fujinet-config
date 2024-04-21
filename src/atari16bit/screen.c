@@ -115,12 +115,8 @@ void screen_error(const char *c)
 
 void screen_init(void)
 {
-  //printf("\033EStart of Screen init.\n");
-//  printf("\033E");
   screen_clrscr();
-  //screen_set_cursor(false);
-  //char dummy = getchar();
-  //printf("Debug: Screen init done!");
+  screen_set_cursor(false);
 }
 
 void screen_set_wifi(AdapterConfig *ac)
