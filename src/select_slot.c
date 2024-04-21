@@ -64,7 +64,7 @@
 #include "pc8801/io.h"
 #include "pc8801/bar.h"
 #endif /* BUILD_PC8801 */
-
+ 
 #ifdef BUILD_PC6001
 #include "pc6001/screen.h"
 #include "pc6001/input.h"

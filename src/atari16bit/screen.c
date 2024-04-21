@@ -57,7 +57,9 @@ void screen_print_menu(const char *si, const char *sc)
 
 void screen_clrscr(void)
 {
+  printf("Debug: clrscr.");
   printf("%cE", 27);
+ 
 }
 
 void screen_gotoxy(char x, char y)
@@ -113,8 +115,12 @@ void screen_error(const char *c)
 
 void screen_init(void)
 {
+  //printf("\033EStart of Screen init.\n");
+//  printf("\033E");
   screen_clrscr();
-  screen_set_cursor(false);
+  //screen_set_cursor(false);
+  //char dummy = getchar();
+  //printf("Debug: Screen init done!");
 }
 
 void screen_set_wifi(AdapterConfig *ac)

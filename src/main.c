@@ -66,6 +66,9 @@
 #ifdef BUILD_ATARI16BIT
 #include "atari16bit/io.h"
 #include "atari16bit/screen.h"
+#ifdef TEST_SCREEN
+#include "atari16bit/tests/test_screen.h"
+#endif /* TEST_SCREEN */
 #endif /* BUILD_ATARI16BIT */
 
 State state=HOSTS_AND_DEVICES;
@@ -84,6 +87,7 @@ extern void io_boot();
 void setup(void)
 {
   io_init();
+  //printf("IO init done.\n");
   screen_init();
 }
 
@@ -145,7 +149,13 @@ void run(void)
 int main(void)
 {
 	setup();
-	state = CHECK_WIFI;
+	printf("Setup done.");
+	#ifdef TEST_SCREEN
+		test_screen_functions();
+		while (1) {}
+	#else
+	state = HOSTS_AND_DEVICES;
 	run();
+	#endif /* TEST_SCREEN */
 	return 0;
 }

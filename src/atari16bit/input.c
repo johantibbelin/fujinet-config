@@ -49,7 +49,7 @@ extern bool long_entry_displayed;
  */
 unsigned char input()
 {
-  return getchar();
+  return 32;
 }
 
 unsigned char input_ucase(void)
