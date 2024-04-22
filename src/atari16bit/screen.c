@@ -52,7 +52,7 @@ void screen_print_inverse(const char *s)
 void screen_print_menu(const char *si, const char *sc)
 {
   screen_print_inverse(si);
-  printf("%c",sc);
+  printf("%s",sc);
 }
 
 void screen_clrscr(void)
