@@ -49,7 +49,7 @@ extern bool long_entry_displayed;
  */
 unsigned char input()
 {
-  return 32;
+  return fgetc(stdin);
 }
 
 unsigned char input_ucase(void)
