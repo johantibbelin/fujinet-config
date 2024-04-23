@@ -13,8 +13,8 @@
 #include <sys/ioctl.h>
 #include <string.h>
 
-#define MAX_DISK_SLOTS (4)
-#define STR_MAX_DISK_SLOTS "4"
+#define MAX_DISK_SLOTS (8)
+#define STR_MAX_DISK_SLOTS "8"
 #define STATUS_BAR 20
 
 extern bool copy_mode;

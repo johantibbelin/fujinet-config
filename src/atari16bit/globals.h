@@ -33,7 +33,7 @@ extern bool quick_boot;
 extern bool backToFiles;
 extern bool backFromCopy;
 
-#define NUM_DEVICE_SLOTS 4
+#define NUM_DEVICE_SLOTS 8
 
 #endif /* GLOBALS_H */
 #endif /* BUILD_ATARI16BIT */
