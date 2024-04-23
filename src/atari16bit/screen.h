@@ -1,6 +1,6 @@
 #ifdef BUILD_ATARI16BIT
 /**
- * FujiNet Config for #Adam
+ * FujiNet Config for #Atari16bit
  * 
  * Screen routines
  */
