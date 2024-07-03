@@ -44,6 +44,11 @@ uint8_t acsi_cmd_send_sio(uint8_t id,uint8_t sio_id, uint8_t sio_cmd, uint8_t si
 /**
  * Assembler functions
 */
-uint8_t acsi_send_command(acsi_cmd_frame *acsi_cmd);
+/**
+ * Sends ACSI command
+ * @param acsi_cmd_frame
+ * @return Status byte
+*/
+extern uint8_t acsi_send_command(acsi_cmd_frame *acsi_cmd);
 #endif /* ACSI_H */
 #endif /* BUILD_ATARI16BIT */
